@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Portfólio</title>
+</head>
+<body>
+
+    <header>
+        <div class="menu-icon" id="menuIcon" onclick="toggleMenu()">
+            &#9776;
+        </div>
+        <h1 class="titulo-navbar">Portfólio</h1>
+        <div class="toggle-container" onclick="toggleTheme()">
+            <div class="toggle-circle"></div>
+        </div>
+    </header>
+    
+    <hr class="header-line">
+
+    <nav id="navbar">
+        <h1 class="welcome-message">Bem-vindo ao meu Portfólio :)</h1>
+        <ul>
+            <li><a href="#home">Sobre</a></li>
+            <li><a href="#sobre">Habilidades</a></li>
+            <li><a href="#projetos">Projetos</a></li>
+            <li><a href="#contato">Contato</a></li>
+        </ul>
+    </nav>
+
+    <section class="sobre-section">
+        <div class="info-content">
+
+          <div class="image-container">
+            <img src="img/avatar branco.png" alt="Rhuan Bello" class="foto">
+          </div>
+          
+          <div class="info-container">
+            <h1>Olá, eu sou o <br> <span>Rhuan Bello :)</span></h1>
+            <h2>Desenvolvedor Front-End</h2>
+            <div class="buttons">
+              <a href="#" class="btn">Download CV</a>
+              <a href="#contato" class="btn btn-transparente">Entrar em contato</a>
+            </div>
+          </div>
+        </div>
+      
+        <div class="about-container">
+          <h1>Sobre mim</h1>
+          <p>Desenvolvedor Front-end com experiência em React.js, Next.js, Redux, JavaScript, TypeScript, Styled Components, Material UI e consumo de APIs REST. Apaixonado pelo desenvolvimento de componentes reutilizáveis. Também possui experiência em projetos gerenciados por Metodologias Ágeis. Formado em Sistemas de Informação e cursando Especialização em Front-End na Digital House Brasil.</p>
+        </div>
+      </section>
+      
+      
+
+  <script src="script.js"></script>
+</body>
+</html>

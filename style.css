@@ -1,0 +1,418 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #13131F;
+    color: #fff;
+    position: relative;  /* Certifica-se de que o z-index funciona */
+    z-index: 2;  /* Coloca o ícone do menu acima do nav */
+    width: 100%;
+}
+
+.header-line {
+    border: none; 
+    border-top: 2px solid #8257E6; /* Cor e espessura da linha */
+}
+
+.hidden {
+    display: none; /* Esconde o elemento */
+}
+
+h1 {
+    margin: 0;
+}
+
+.menu-icon {
+    color: #8257E6;
+    font-size: 30px;
+    cursor: pointer;
+    transition: transform 0.3s;
+    display: flex;
+    flex-direction: column; /* Para empilhar o ícone e a mensagem */
+    align-items: center; /* Centraliza a mensagem */
+    margin-left: 100px;
+    transition: margin-left 0.3s ease;
+}
+
+.welcome-message {
+    font-size: 30px; /* Tamanho da fonte */
+    color: #ffffff; /* Cor do texto */
+    text-align: center; /* Centraliza o texto */
+    margin: 100px 0; /* Espaço ao redor do título */
+    position: absolute; /* Posição absoluta para ficar sobre os links */
+    top: 10%; /* Ajuste para o local desejado */
+    left: 50%; /* Centraliza horizontalmente */
+    transform: translateX(-50%); /* Alinha ao centro */
+    z-index: 3; /* Garante que esteja acima dos links */
+}
+
+nav {
+    position: fixed;
+    left: -100%; 
+    width: 100%;
+    height: 100%;
+    background-color: rgba(51, 51, 51, 0.7); /* Fundo padrão (modo claro) */
+    backdrop-filter: blur(10px); /* Desfoque do fundo */
+    transition: left 0.3s, background-color 0.3s; 
+    z-index: 1;
+}
+
+nav.open {
+    left: 0; /* Move o menu para dentro da tela quando aberto */
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Mantém a centralização */
+    align-items: center; /* Adiciona centralização horizontal */
+}
+
+nav ul li {
+    margin: 20px 0;
+    text-align: center;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 30px;
+    display: inline-block; /* Permite aplicar transformações */
+    transition: transform 0.3s ease, color 0.3s ease; /* Transições suaves */
+}
+
+nav ul li a:hover {
+    color: #8257E6; /* Muda a cor ao passar o mouse */
+}
+
+.toggle-container {
+    width: 60px; /* Largura do botão */
+    height: 30px; /* Altura do botão */
+    background-color: white; /* Cor de fundo padrão */
+    border-radius: 15px; /* Arredondamento do botão */
+    position: relative; /* Para posicionamento da bolinha */
+    cursor: pointer; /* Muda o cursor ao passar o mouse */
+    transition: background-color 0.3s; /* Efeito de transição da cor de fundo */
+    margin-right: 100px;
+    transition: margin-right 0.3s ease;
+}
+
+.toggle-circle {
+    width: 26px; /* Largura da bolinha */
+    height: 26px; /* Altura da bolinha */
+    background-color: #13131F; /* Cor da bolinha */
+    border-radius: 50%; /* Faz a bolinha ser redonda */
+    position: absolute; /* Para posicionamento */
+    top: 50%; /* Centraliza verticalmente */
+    left: 2px; /* Posiciona à esquerda */
+    transform: translateY(-50%); /* Ajusta o alinhamento vertical */
+    transition: left 0.3s; /* Efeito de transição ao mover a bolinha */
+}
+
+/* Estilo para o tema escuro */
+.dark-theme .toggle-container {
+    background-color: #8257E6; /* Cor de fundo no tema escuro */
+}
+
+.dark-theme .welcome-message {
+    color: #8257E6; /* Cor roxa para o tema escuro */
+}
+
+
+.dark-theme .toggle-circle {
+    left: 32px; /* Move a bolinha para a direita no tema escuro */
+}
+
+.dark-theme {
+    background-color: #13131F; /* Cor de fundo escura para toda a página */
+    color: #ffffff; /* Cor do texto no tema escuro */
+}
+
+.dark-theme nav {
+    background-color: rgba(19, 19, 31, 0.7); /* Fundo no modo escuro */
+    backdrop-filter: blur(10px); /* Mantém o desfoque no modo escuro */
+}
+
+
+
+
+
+
+
+
+.sobre-section {
+    display: flex;
+    flex-direction: column;
+    padding: 100px;
+    background-color: #f0f0f5;
+    min-height: 100vh; /* Garante que a section ocupe ao menos 100% da altura da tela */
+}
+  
+.info-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 50px;
+}
+  
+.info-container {
+    width: 50%;
+}
+  
+.info-container h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    color: #333;
+}
+  
+.info-container h2 {
+    font-weight: 500;
+    font-size: 1.5em;
+    margin-bottom: 35px;
+    color: #8A8B8A;
+}
+  
+.buttons {
+    margin-top:  25px;
+}
+  
+.btn {
+    background-color: #8257E6;
+    color: white;
+    padding: 10px 20px;
+    margin-right: 15px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+  
+.btn:hover {
+    background-color: #6842C2;
+}
+
+.btn-transparente {
+    background-color: transparent; /* Fundo transparente */
+    border: 2px solid #8257E6; /* Bordas roxas */
+    color: #8257E6; /* Texto roxo */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Transição para efeito de hover */
+  }
+  
+  .btn-transparente:hover {
+    background-color: #8257E6; /* Fundo roxo ao passar o mouse */
+    color: white; /* Texto branco ao passar o mouse */
+  }
+  
+.image-container {
+    display: inline-block; /* Ajusta o tamanho ao conteúdo */
+    margin-left: 20px; /* Margem à esquerda */
+}
+  
+.foto {
+    width: auto; /* Para manter a proporção da imagem */
+    max-width: 100%; /* Limita a largura da imagem */
+    max-height: 400px; /* Ajuste a altura máxima conforme necessário */
+    border-radius: 45%;
+}
+  
+.about-container {
+    margin-top: 50px;
+    text-align: center;
+}
+  
+.about-container h1 {
+    font-size: 2.2em;
+    margin-bottom: 20px;
+    color: #333;
+}
+  
+.about-container p {
+    font-size: 1.2em;
+    line-height: 1.6;
+    color: #8A8B8A;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.dark-theme .sobre-section {
+    background-color: #13131F;
+}
+
+.dark-theme  .sobre-section h1 {
+    color: white;
+}
+
+.dark-theme .info-container h1 span {
+    color: #8257E6;
+}
+
+.dark-theme .btn-transparente {
+    color: white;
+}
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Ajustes para telas menores */
+
+@media (max-width: 768px) {
+
+    header {
+        align-items: center;
+        padding: 15px;
+    }
+
+    nav ul {
+        padding: 0;
+        margin: 0;
+    }
+
+    nav ul li a {
+        font-size: 30px; /* Ajusta o tamanho dos links no mobile */
+    }
+
+    .menu-icon {
+        font-size: 23px; /* Diminui o ícone */
+        margin-left: calc(45px - 5vw); /* Ajusta a margem à medida que a tela diminui */
+    }
+
+    .welcome-message {
+        font-size: 25px; /* Reduz o tamanho do título */
+        margin: 10px 0;
+    }
+
+    .titulo-navbar {
+        font-size: 25px; /* Reduz o tamanho do título */
+        margin: 10px 0;
+    }
+
+    .toggle-container {
+        width: 50px; /* Diminui o botão de alternância */
+        height: 25px;
+        margin-right: calc(45px - 5vw); /* Ajusta a margem à medida que a tela diminui */
+    }
+
+    .toggle-circle {
+        width: 20px; /* Diminui a largura da bolinha */
+        height: 20px; /* Diminui a altura da bolinha */
+        left: 2px; /* Ajusta a posição inicial */
+        transition: left 0.3s; /* Mantém a transição */
+    }
+
+    .dark-theme .toggle-circle {
+        left: 28px; /* Ajusta a posição no modo escuro */
+    }
+
+    .sobre-section {
+        padding: 50px; /* Reduz o padding em telas muito pequenas */
+    }
+
+    header {
+        padding: 15px;
+    }
+
+    .info-container h1 {
+        font-size: 1.5em; /* Ajusta o tamanho do título ainda mais */
+    }
+
+    .info-container h2 {
+        font-size: 1em; /* Ajusta o tamanho do subtítulo */
+    }
+
+    .btn {
+        padding: 5px 10px; /* Diminui ainda mais o padding dos botões */
+        display: block;
+        width: 100%;
+        margin: 20px 0;
+    }
+
+}
+
+@media (min-width: 769px) {
+    .image-container {
+        order: 2; /* Garante que a imagem fique em segundo lugar */
+    }
+}
+
+
+@media (max-width: 1024px) {
+    .info-content {
+        flex-direction: column; /* Muda a direção para coluna em telas menores */
+        align-items: center; /* Centraliza os itens */
+    }
+
+    .info-container,
+    .image-container {
+        width: 100%; /* Faz os containers ocuparem 100% da largura */
+        text-align: center; /* Centraliza o texto */
+    }
+
+    .image-container {
+        margin-left: 0; /* Remove a margem à esquerda */
+        margin-bottom: 20px; /* Adiciona um espaço inferior */
+    }
+
+    .info-container h1 {
+        font-size: 2em; /* Ajusta o tamanho do título */
+    }
+
+    .info-container h2 {
+        font-size: 1.2em; /* Ajusta o tamanho do subtítulo */
+    }
+
+    .btn {
+        padding: 8px 16px; /* Reduz o padding dos botões */
+    }
+
+    .about-container h1 {
+        font-size: 1.8em; /* Ajusta o tamanho do título da seção "Sobre" */
+    }
+
+    .about-container p {
+        font-size: 1em; /* Ajusta o tamanho do parágrafo */
+    }
+}
+
+
+@media (max-width: 1024px) and (min-width: 768px) {
+    .image-container {
+        order: 2; /* Garante que a imagem fique em segundo lugar */
+    }
+}
+

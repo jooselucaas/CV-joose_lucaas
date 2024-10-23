@@ -6,7 +6,7 @@
 }
 
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Poppins', sans-serif;
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
@@ -17,14 +17,23 @@ header {
     padding: 20px;
     background-color: #13131F;
     color: #fff;
-    position: relative;  /* Certifica-se de que o z-index funciona */
+    position: fixed;  /* Certifica-se de que o z-index funciona */
     z-index: 2;  /* Coloca o ícone do menu acima do nav */
     width: 100%;
+}
+
+.spacer {
+    height: 80px; /* Ajuste para a altura do cabeçalho */
 }
 
 .header-line {
     border: none; 
     border-top: 2px solid #8257E6; /* Cor e espessura da linha */
+    position: fixed; /* Mantém a linha fixa */
+    top: 80px; /* Ajuste para ficar logo abaixo do cabeçalho */
+    left: 0; /* Alinha à esquerda */
+    width: 100%; /* Largura total da linha */
+    z-index: 1; /* Garante que a linha fique abaixo do cabeçalho */
 }
 
 .hidden {
@@ -148,6 +157,10 @@ nav ul li a:hover {
 .dark-theme nav {
     background-color: rgba(19, 19, 31, 0.7); /* Fundo no modo escuro */
     backdrop-filter: blur(10px); /* Mantém o desfoque no modo escuro */
+}
+
+.no-scroll {
+    overflow: hidden; /* Desabilita a rolagem do corpo */
 }
 
 
@@ -337,6 +350,285 @@ nav ul li a:hover {
 }
 
 
+#projects {
+    background-color: #F0F0F5;
+    padding: 20px;
+}
+
+.projects-title {
+    font-size: 2.2em;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.destaques-title {
+    margin-top: 10px;
+    margin-left: 50px;
+}
+
+.short-line {
+    width: 50px;
+    border-top: 2px solid #8257E6;
+    margin: 10px 0;
+}
+
+.projects-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    margin: 0 45px;
+}
+
+.project-card {
+    position: relative;
+    margin: 5px;
+    width: calc(33.33% - 10px);
+    overflow: hidden;
+    border-bottom: 3px solid #8257E6; /* Borda inferior roxa */
+    background-color: black;
+}
+
+.project-title-container {
+    position: absolute;
+    top: 50%; /* Ajuste para a posição do título */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-align: center;
+    z-index: 1;
+}
+
+.project-title-container h3 {
+    font-weight: 500;
+    white-space: nowrap; /* Impede quebra de linha */
+    overflow: hidden; /* Evita que o texto extravase */
+    text-overflow: ellipsis; /* Adiciona "..." se o texto for muito longo */
+}
+
+.project-card img {
+    width: 100%;
+    opacity: 0.5;
+    transition: transform 0.3s ease, opacity 0.3s ease; /* Transição suave */
+    margin-bottom: -15px;
+}
+
+.project-card:hover img {
+    opacity: 1; /* Torna a imagem mais escura ao passar o mouse */
+}
+
+.hover-banner {
+    position: absolute; 
+    bottom: -100%; /* Mantém o banner fora da vista inicialmente */
+    left: 0; 
+    right: 0;
+    background-color: #212121;
+    color: white;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: bottom 0.5s ease-in-out;
+    z-index: 1; /* Garante que o banner fique acima do título e da linha */
+}
+
+.project-card:hover .hover-banner {
+    bottom: 0;
+    transition: bottom 0.5s ease-in-out; /* Adiciona transição ao banner */
+}
+
+.project-title-container,
+.icons {
+    opacity: 1; /* Opacidade normal */
+    transition: opacity 0.3s ease; /* Transição suave para a opacidade */
+}
+
+.project-card:hover .project-title-container,
+.project-card:hover .icons {
+    opacity: 0; /* Oculte o título e os ícones */
+}
+
+.hover-banner {
+    opacity: 0; /* Inicialmente invisível */
+}
+
+.project-card:hover .hover-banner {
+    bottom: 0; /* Mostra o banner */
+    opacity: 1; /* Torna o banner visível */
+    transition: bottom 0.5s ease-in-out, opacity 0.3s ease; /* Transição suave */
+}
+
+.project1-line {
+    width: 80px; /* Mantém uma largura fixa */
+    margin: 10px 0;
+    margin-left: 50px;
+    border: none; /* Remove a borda padrão */
+    height: 3px; /* Define a altura da linha */
+    background-color: #8257E6; 
+}
+
+.icons {
+    display: flex;
+    justify-content: center;
+    margin: 5px 0; /* Espaço entre o título e os ícones */
+    position: absolute; /* Coloque a posição absoluta para alinhar melhor */
+    top: 60%; /* Ajuste para posicionar abaixo do título */
+    left: 50%;
+    transform: translate(-50%, -50%); /* Centraliza os ícones */
+}
+
+.icons i {
+    font-size: 1.5em; /* Tamanho dos ícones */
+    color: #8257E6; /* Cor dos ícones */
+    margin: 0 10px; /* Espaçamento entre os ícones */
+    transition: color 0.3s ease; /* Transição suave para mudança de cor */
+}
+
+.icons i:hover {
+    color: #5e3ca8; /* Cor dos ícones ao passar o mouse */
+}
+
+.project-date {
+    font-weight: 500;
+    font-size: 15px;
+}
+
+.ver-mais {
+    font-weight: 500;
+    background-color: #8257E6;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    border-radius: 5px;
+}
+
+.ver-mais:hover {
+    background-color: #5e3ca8;
+}
+
+.dark-theme #projects {
+    background-color: #13131F;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.modal {
+    display: none; /* Oculto por padrão */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8); /* Fundo escurecido */
+    backdrop-filter: blur(3px); /* Aplica o desfoque ao fundo */
+}
+
+.modal-content {
+    background-color: #13131F;
+    margin: auto; /* Centraliza automaticamente */
+    padding: 20px;
+    border-radius: 8px;
+    width: 90%; /* Aumente a largura para 90% para dar mais espaço ao conteúdo */
+    max-width: 1200px; /* Aumente a largura máxima para 1200px */
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    top: 50%; /* Move para o meio da tela */
+    transform: translateY(-50%); /* Compensa a altura do container para centralizar */
+}
+
+.modal-left {
+    flex: 0 0 40%; /* 40% da largura para o vídeo */
+    display: flex;
+    flex-direction: column; /* Coloca vídeo e botões em coluna */
+}
+
+.modal-left video {
+    width: 100%; /* Largura total do vídeo */
+    height: auto; /* Altura automática para manter proporção */
+}
+
+.modal-buttons {
+    margin-top: 20px;
+    display: flex; /* Use flexbox para alinhar os botões */
+    justify-content: center; /* Centraliza os botões horizontalmente */
+    gap: 10px; /* Espaço entre os botões, ajuste conforme necessário */
+}
+
+.modal-button {
+    font-size: 0.7rem;
+    display: inline-block;
+    margin-right: 10px;
+    padding: 10px 20px;
+    background-color: #8257E6;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.modal-button:hover {
+    background-color: #5e3ca8;
+}
+
+.modal-right {
+    flex: 1; /* O conteúdo à direita ocupa o restante do espaço */
+    padding-left: 20px; /* Espaçamento à esquerda */
+    display: flex;
+    flex-direction: column; /* Alinha os elementos em coluna */
+}
+
+.h1, .p, .h3 {
+    margin: 0; /* Remove margens padrão */
+    margin-bottom: 1rem; /* Espaço entre os elementos */
+}
+
+.h1 {
+    font-size: 2rem;
+    font-weight: 500;
+    color: #8257E6;
+}
+
+.p {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #828282;
+    line-height: 140%;
+    padding: 1rem 0;
+}
+
+.h3 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #8257E6;
+}
+
+.close {
+    position: absolute;
+    right: 20px;
+    top: 10px;
+    font-size: 28px; /* Aumenta o tamanho do "X" */
+    color: #8257E6; /* Cor roxa */
+    cursor: pointer; /* Muda o cursor para pointer ao passar o mouse */
+    transition: color 0.3s ease; /* Animação suave para a cor */
+}
+
+
+
+
+
+
   
 
 
@@ -367,6 +659,57 @@ nav ul li a:hover {
         flex: 0 1 80px; /* Aumenta o ajuste em telas muito pequenas */
         padding: 10px; /* Ajusta o padding se necessário */
     }
+
+    /* Ajuste adicional no título "Projetos" para telas bem pequenas */
+    .projects-title {
+        font-size: 1.5em;
+    }
+
+    /* Margem menor no container para se ajustar à tela */
+    .projects-container {
+        margin: 0 10px;
+    }
+
+    .modal-content {
+        padding: 15px; /* Reduz o padding para telas menores */
+    }
+
+    .h1 {
+        font-size: 1.2rem; /* Diminui o tamanho do título */
+    }
+
+    .h3 {
+        font-size: 0.8rem; /* Diminui o tamanho do subtítulo */
+    }
+
+    .p {
+        font-size: 0.7rem; /* Diminui o tamanho do parágrafo */
+    }
+
+    .modal-buttons {
+        flex-direction: column; /* Mantém os botões em coluna */
+        align-items: stretch; /* Alinha os botões para ocupar toda a largura */
+    }
+
+    .modal-button {
+        width: 100%; /* Os botões ocupam toda a largura */
+        margin-bottom: 5px; /* Espaço reduzido entre os botões */
+    }
+
+    .close {
+        right: 10px; /* Ajusta a posição do botão fechar */
+        top: 5px; /* Ajusta a posição do botão fechar */
+        font-size: 24px; /* Diminui o tamanho do "X" */
+    }
+
+    .project-date {
+        font-size: 0.8rem; /* Diminui ainda mais o tamanho da fonte */
+    }
+
+    .ver-mais {
+        padding: 12px; /* Aumenta o padding do botão para facilitar o toque */
+        font-size: 0.8rem; /* Diminui o tamanho da fonte do botão */
+    }
 }
 
 @media (max-width: 768px) {
@@ -393,6 +736,10 @@ nav ul li a:hover {
     .welcome-message {
         font-size: 25px; /* Reduz o tamanho do título */
         margin: 10px 0;
+    }
+
+    .header-line {
+        top: 79px; /* Ajuste a altura aqui, se necessário */
     }
 
     .titulo-navbar {
@@ -443,6 +790,83 @@ nav ul li a:hover {
     .skill-box {
         flex: 0 1 100px; /* Faz cubos mais finos em telas menores */
         padding: 15px; /* Ajusta o padding se necessário */
+    }
+
+    .projects-title {
+        font-size: 1.8em;
+    }
+
+    /* Ajuste para as imagens ficarem uma abaixo da outra em telas menores */
+    .projects-container {
+        flex-direction: column;
+        margin: 0 20px; /* Reduz a margem lateral */
+    }
+
+    .project-card {
+        width: 100%; /* Ocupar toda a largura da tela no mobile */
+        margin: 10px 0; /* Espaçamento vertical entre os cards */
+    }
+
+    /* Manter tamanho fixo para o título "Destaques" e a linha abaixo */
+    .destaques-title, .project1-line {
+        font-size: 1.2em;
+    }
+
+    .project1-line {
+        width: 50px;
+        margin: 10px auto; /* Centraliza a linha */
+        margin-left: 20px;
+    }
+
+    .destaques-title {
+        margin-left: 20px; /* Ajusta o espaçamento para telas menores */
+    }
+
+    .modal-left {
+        display: none; /* Oculta a seção do vídeo */
+    }
+
+    .modal-right {
+        flex: 1; /* O conteúdo à direita ocupa todo o espaço disponível */
+        padding-left: 0; /* Remove o padding à esquerda */
+    }
+
+    .h1 {
+        font-size: 1.5rem; /* Diminui o tamanho do título */
+    }
+
+    .h3 {
+        font-size: 0.9rem; /* Diminui o tamanho do subtítulo */
+    }
+
+    .p {
+        font-size: 0.8rem; /* Diminui o tamanho do parágrafo */
+    }
+
+    .modal-buttons {
+        flex-direction: column; /* Coloca os botões em coluna */
+        align-items: center; /* Centraliza os botões */
+    }
+
+    .modal-button {
+        width: 100%; /* Os botões ocupam toda a largura */
+        margin-bottom: 10px; /* Espaço entre os botões */
+    }
+
+    .close {
+        top: 5px; /* Ajusta a posição do botão fechar */
+        right: 10px; /* Ajusta a posição do botão fechar */
+        font-size: 24px; /* Ajusta o tamanho do "X" */
+    }
+
+    .project-date {
+        font-size: 0.9rem; /* Diminui o tamanho da fonte */
+        margin-bottom: 5px; /* Espaço abaixo da data */
+    }
+
+    .ver-mais {
+        font-size: 0.9rem; /* Diminui o tamanho da fonte */
+        padding: 10px; /* Aumenta o padding para toque mais fácil */
     }
 
 }
@@ -496,10 +920,28 @@ nav ul li a:hover {
     }
 }
 
+/* Ajustes para telas entre 993px e 768px */
+@media (max-width: 993px) and (min-width: 768px) {
+    .modal-button {
+        
+        font-size: 0.9rem; /* Diminui o tamanho da fonte dos botões */
+       
+        
+    }
+
+    .modal-buttons {
+        display: flex; /* Usar flexbox para manter os botões em linha */
+        justify-content: space-between; /* Espaço entre os botões */
+        flex-direction: column;
+        text-align: center;
+    
+    }
+}
 
 @media (max-width: 1024px) and (min-width: 768px) {
     .image-container {
         order: 2; /* Garante que a imagem fique em segundo lugar */
     }
 }
+
 

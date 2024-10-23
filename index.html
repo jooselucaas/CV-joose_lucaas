@@ -3,34 +3,37 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <link rel="stylesheet" href="style.css">
   <title>Portfólio</title>
 </head>
 <body>
 
-    <header>
-        <div class="menu-icon" id="menuIcon" onclick="toggleMenu()">
-            &#9776;
-        </div>
-        <h1 class="titulo-navbar">Portfólio</h1>
-        <div class="toggle-container" onclick="toggleTheme()">
-            <div class="toggle-circle"></div>
-        </div>
-    </header>
-    
-    <hr class="header-line">
+      <header>
+          <div class="menu-icon" id="menuIcon" onclick="toggleMenu()">
+              &#9776;
+          </div>
+          <h1 class="titulo-navbar">Portfólio</h1>
+          <div class="toggle-container" onclick="toggleTheme()">
+              <div class="toggle-circle"></div>
+          </div>
+      </header>
 
-    <nav id="navbar">
-        <h1 class="welcome-message">Bem-vindo ao meu Portfólio :)</h1>
-        <ul>
-            <li><a href="#home">Sobre</a></li>
-            <li><a href="#sobre">Habilidades</a></li>
-            <li><a href="#projetos">Projetos</a></li>
-            <li><a href="#contato">Contato</a></li>
-        </ul>
-    </nav>
+      <div class="spacer"></div> <!-- Espaço para o cabeçalho -->
 
-    <section class="sobre-section">
+      <hr class="header-line">
+
+      <nav id="navbar">
+          <h1 class="welcome-message">Bem-vindo ao meu Portfólio :)</h1>
+          <ul>
+              <li><a href="#home">Sobre</a></li>
+              <li><a href="#sobre">Habilidades</a></li>
+              <li><a href="#projetos">Projetos</a></li>
+              <li><a href="#contato">Contato</a></li>
+          </ul>
+      </nav>
+
+      <section class="sobre-section">
         <div class="info-content">
 
           <div class="image-container">
@@ -98,6 +101,101 @@
         </div>
       </section>
       
+
+      <section id="projects">
+        <h1 class="projects-title">Projetos</h1>
+        <h2 class="destaques-title">Destaques</h2>
+        <hr class="project1-line">
+        
+        <div class="projects-container">
+            <!-- Card de Projeto 1 -->
+            <div class="project-card">
+                <img src="https://www.rhuanbello.com/assets/projects/themovieguide.jpg" alt="Projeto 1">
+                <div class="project-title-container">
+                  <h3>The Movie Guide</h3>
+                </div>
+                <div class="icons">
+                  <i class="fa-brands fa-html5"></i>
+                  <i class="fa-brands fa-css3-alt"></i>
+                  <i class="fa-brands fa-js"></i>
+                </div>
+                <div class="hover-banner">
+                    <span class="project-date">17 de Março de 2022</span>
+                    <button class="ver-mais" data-project="movieGuide">Ver mais</button>
+                </div>
+            </div>
+            
+            <!-- Card de Projeto 2 -->
+            <div class="project-card">
+                <img src="https://www.rhuanbello.com/assets/projects/dailyweather.jpg" alt="Projeto 2">
+                <div class="project-title-container">
+                  <h3>Daily Weather</h3>
+                </div>
+                <div class="icons">
+                  <i class="fa-brands fa-html5"></i>
+                  <i class="fa-brands fa-css3-alt"></i>
+                  <i class="fa-brands fa-js"></i>
+                </div>
+                <div class="hover-banner">
+                    <span class="project-date">28 de Outubro de 2021</span>
+                    <button class="ver-mais" data-project="movieGuide">Ver mais</button>
+                </div>
+            </div>
+             <!-- Card de Projeto 2 -->
+            <div class="project-card">
+                <img src="https://www.rhuanbello.com/assets/projects/calculadora.jpg" alt="Projeto 2">
+                <div class="project-title-container">
+                  <h3>Calculadora do Windows 10</h3>
+                </div>
+                <div class="icons">
+                  <i class="fa-brands fa-html5"></i>
+                  <i class="fa-brands fa-css3-alt"></i>
+                  <i class="fa-brands fa-js"></i>
+                </div>
+                <div class="hover-banner">
+                    <span class="project-date">14 de Outubro de 2021</span>
+                    <button class="ver-mais" data-project="movieGuide">Ver mais</button>
+                </div>
+            </div>
+        </div>
+      </section>
+      
+      <!-- Modal (fora da section) -->
+      <div id="project-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-left">
+                <video controls>
+                    <source src="video.mp4" type="video/mp4">
+                    Seu navegador não suporta o elemento de vídeo.
+                </video>
+                <div class="modal-buttons">
+                    <a href="#" class="modal-button">Acessar projeto</a>
+                    <a href="#" class="modal-button">Acessar repositório</a>
+                    <a href="#" class="modal-button">Ver post no Linkedin</a>
+                </div>
+            </div>
+            <div class="modal-right">
+                <h1 class="h1">The Movie Guide</h1>
+                <p class="p">The Movie Guide é uma aplicação que reúne informações sobre artistas e produções, permitindo que usuários pesquisem e avaliem seus filmes favoritos, além de personalizar seu próprio perfil. <br> <br>
+
+                  Tive muita inspiração de sites como Letterboxd e Filmow, dos quais sou usuário assíduo há anos. Mas a ideia surgiu mesmo do Desafio Front-End da Promobit localizado no repositório do Felipe Fialho, onde cumpri os requisitos apontados e fui além criando novas features, como: <br> <br>
+                  
+                  • Realizar upload de Imagens; <br>
+                  • Avaliar e catalogar filmes favoritos/já assistidos; <br>
+                  • Barra de pesquisa que busca por títulos e artistas simultaneamente; <br>
+                  • Animações com a biblioteca Framer Motion; <br>
+                  • Rotas dinâmicas com React Router Dom; <br>
+                  • Filtro acumulativo de gêneros; <br> <br>
+                  
+                  No desenvolvimento decidi utilizar o Vite.js como Build Tool pelo desempenho, Redux pro gerenciamento e armazenamento de Estados Globais, Styled Components pelos diversos benefícios do CSS-in-JS, TypeScript por facilitar na hora de fazer depuração no código e o React Router Dom pra manipulação de rotas; <br> <br>
+                  
+                  Foram longas horas de desenvolvimento, e sinto que esse projeto serviu pra consolidar tudo que aprendi nesses últimos meses estudando React.js :)</p>
+                <h3 class="h3">17 de Março de 2022</h3>
+            </div>
+            <span class="close">&times;</span>
+        </div>
+    </div>
+    
       
       
 

@@ -10,6 +10,24 @@ body {
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
+body.modal-open {
+    overflow: hidden;
+}
+
+::-webkit-scrollbar {
+    width: 12px; /* Largura da barra de rolagem */
+}
+
+::-webkit-scrollbar-track {
+    background: #13131F; /* Cor do fundo da barra de rolagem */
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #8257E6; /* Cor do thumb */
+    border-radius: 6px; /* Arredondamento das bordas */
+    border: 3px solid #13131F; /* Cor do contorno ao redor do thumb */
+}
+
 header {
     display: flex;
     justify-content: space-between;
@@ -567,7 +585,7 @@ nav ul li a:hover {
 }
 
 .modal-button {
-    font-size: 0.7rem;
+    font-size: 0.9rem;
     display: inline-block;
     margin-right: 10px;
     padding: 10px 20px;
@@ -576,6 +594,7 @@ nav ul li a:hover {
     text-decoration: none;
     border-radius: 5px;
     transition: background-color 0.3s ease;
+    white-space: nowrap; /* Impede a quebra do texto */
 }
 
 .modal-button:hover {

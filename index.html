@@ -110,9 +110,9 @@
         <div class="projects-container">
             <!-- Card de Projeto 1 -->
             <div class="project-card">
-                <img src="https://www.rhuanbello.com/assets/projects/themovieguide.jpg" alt="Projeto 1">
+                <img src="img/img advogacia.png" alt="Projeto 1">
                 <div class="project-title-container">
-                  <h3>The Movie Guide</h3>
+                  <h3>Site para Advogados</h3>
                 </div>
                 <div class="icons">
                   <i class="fa-brands fa-html5"></i>
@@ -127,9 +127,9 @@
             
             <!-- Card de Projeto 2 -->
             <div class="project-card">
-                <img src="https://www.rhuanbello.com/assets/projects/dailyweather.jpg" alt="Projeto 2">
+                <img src="img/img zotweb.png" alt="Projeto 2">
                 <div class="project-title-container">
-                  <h3>Daily Weather</h3>
+                  <h3>Agência Zone Of Tech</h3>
                 </div>
                 <div class="icons">
                   <i class="fa-brands fa-html5"></i>
@@ -138,14 +138,14 @@
                 </div>
                 <div class="hover-banner">
                     <span class="project-date">28 de Outubro de 2021</span>
-                    <button class="ver-mais" data-project="movieGuide">Ver mais</button>
+                    <button class="ver-mais" data-project="dailyWeather">Ver mais</button>
                 </div>
             </div>
              <!-- Card de Projeto 2 -->
             <div class="project-card">
-                <img src="https://www.rhuanbello.com/assets/projects/calculadora.jpg" alt="Projeto 2">
+                <img src="img/img fot.png" alt="Projeto 3">
                 <div class="project-title-container">
-                  <h3>Calculadora do Windows 10</h3>
+                  <h3>Site para Fotógrafo</h3>
                 </div>
                 <div class="icons">
                   <i class="fa-brands fa-html5"></i>
@@ -154,47 +154,34 @@
                 </div>
                 <div class="hover-banner">
                     <span class="project-date">14 de Outubro de 2021</span>
-                    <button class="ver-mais" data-project="movieGuide">Ver mais</button>
+                    <button class="ver-mais" data-project="calculadora">Ver mais</button>
                 </div>
             </div>
         </div>
       </section>
       
-      <!-- Modal (fora da section) -->
+      <!-- Modal -->
       <div id="project-modal" class="modal">
         <div class="modal-content">
             <div class="modal-left">
-                <video controls>
-                    <source src="video.mp4" type="video/mp4">
+                <video id="modal-video" controls>
+                    <source id="video-source" src="" type="video/mp4">
                     Seu navegador não suporta o elemento de vídeo.
                 </video>
                 <div class="modal-buttons">
-                    <a href="#" class="modal-button">Acessar projeto</a>
-                    <a href="#" class="modal-button">Acessar repositório</a>
-                    <a href="#" class="modal-button">Ver post no Linkedin</a>
+                    <a id="project-link" href="#" class="modal-button">Acessar projeto</a>
+                    <a id="repo-link" href="#" class="modal-button">Acessar repositório</a>
+                    <a id="linkedin-link" href="#" class="modal-button">Ver post no Linkedin</a>
                 </div>
             </div>
             <div class="modal-right">
-                <h1 class="h1">The Movie Guide</h1>
-                <p class="p">The Movie Guide é uma aplicação que reúne informações sobre artistas e produções, permitindo que usuários pesquisem e avaliem seus filmes favoritos, além de personalizar seu próprio perfil. <br> <br>
-
-                  Tive muita inspiração de sites como Letterboxd e Filmow, dos quais sou usuário assíduo há anos. Mas a ideia surgiu mesmo do Desafio Front-End da Promobit localizado no repositório do Felipe Fialho, onde cumpri os requisitos apontados e fui além criando novas features, como: <br> <br>
-                  
-                  • Realizar upload de Imagens; <br>
-                  • Avaliar e catalogar filmes favoritos/já assistidos; <br>
-                  • Barra de pesquisa que busca por títulos e artistas simultaneamente; <br>
-                  • Animações com a biblioteca Framer Motion; <br>
-                  • Rotas dinâmicas com React Router Dom; <br>
-                  • Filtro acumulativo de gêneros; <br> <br>
-                  
-                  No desenvolvimento decidi utilizar o Vite.js como Build Tool pelo desempenho, Redux pro gerenciamento e armazenamento de Estados Globais, Styled Components pelos diversos benefícios do CSS-in-JS, TypeScript por facilitar na hora de fazer depuração no código e o React Router Dom pra manipulação de rotas; <br> <br>
-                  
-                  Foram longas horas de desenvolvimento, e sinto que esse projeto serviu pra consolidar tudo que aprendi nesses últimos meses estudando React.js :)</p>
-                <h3 class="h3">17 de Março de 2022</h3>
+                <h1 id="project-title" class="h1"></h1>
+                <p id="project-description" class="p"></p>
+                <h3 id="project-date" class="h3"></h3>
             </div>
             <span class="close">&times;</span>
         </div>
-    </div>
+      </div>
     
       
       
